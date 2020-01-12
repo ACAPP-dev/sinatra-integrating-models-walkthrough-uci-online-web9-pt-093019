@@ -21,7 +21,7 @@ class TextAnalyzer
   end
 
   def max_letters
-    result = text.scan(/\w/).reduce(Hash.new(0)) {|h, c| h[c] += 1; h}
+    p result = text.scan(/\w/).reduce(Hash.new(0)) {|h, c| h[c] += 1; h}
     sorted_result = result.sort_by{|key, value| value}.reverse
     top = sorted_result[0][1]
     p max_letter = sorted_result.take_while{|key, value| value == top}
